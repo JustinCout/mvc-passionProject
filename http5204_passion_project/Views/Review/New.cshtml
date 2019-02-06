@@ -1,0 +1,51 @@
+﻿@model http5204_passion_project.Models.Review
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Forum</h2>
+<form method="POST" action="/Review/New">
+    <div class="form-group">
+        <label>Title</label>
+        <input id="ReviewTitle" name="ReviewTitle" />
+    </div>
+    
+    <div class="form-group">
+        <label>Author NickName</label>
+        <input id="AuthorAlias" name="AuthorAlias" />
+    </div>
+
+    <div class="form-group">
+        <label>Series (Where is it from?)</label>
+        <input id="ReviewSeries" name="ReviewSeries" />
+    </div>
+
+    <div class="form-group">
+        <label>Category</label>
+        <select name="ReviewCategory">
+            <option value="tv">TV Show</option>
+            <option value="movie">Movie</option>
+            <option value="game">Video Game</option>
+            <option value="comic">Comic Book</option>
+            <option value="book">Book</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Date</label>
+        <input type="date" name="ReviewDate">
+    </div>
+
+
+
+    <div class="form-group">
+        <label>Content</label>
+        <textarea id="ReviewContent" name="ReviewContent"></textarea>
+    </div>
+
+    <input type="submit" id="submitBtn" value="Create" />
+
+</form>
+
