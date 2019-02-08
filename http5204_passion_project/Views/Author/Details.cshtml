@@ -1,0 +1,42 @@
+﻿@model http5204_passion_project.Models.Author
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Author</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorAlias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorAlias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasPic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasPic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AuthorId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

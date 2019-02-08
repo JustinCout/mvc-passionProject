@@ -5,26 +5,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>New Forum</h2>
-<form method="POST" action="/Review/New">
+<h2>New Review</h2>
+<form method="POST" action="/Review/Create">
     <div class="form-group">
         <label>Title</label>
-        <input id="ReviewTitle" name="ReviewTitle" />
+        <input id="ReviewTitle" name="new_ReviewName" />
     </div>
-    
-    <div class="form-group">
-        <label>Author NickName</label>
-        <input id="AuthorAlias" name="AuthorAlias" />
-    </div>
-
+  
     <div class="form-group">
         <label>Series (Where is it from?)</label>
-        <input id="ReviewSeries" name="ReviewSeries" />
+        <input id="ReviewSeries" name="new_ReviewSeries" />
     </div>
 
     <div class="form-group">
         <label>Category</label>
-        <select name="ReviewCategory">
+        <select name="new_ReviewCategory">
             <option value="tv">TV Show</option>
             <option value="movie">Movie</option>
             <option value="game">Video Game</option>
@@ -35,17 +30,17 @@
 
     <div class="form-group">
         <label>Date</label>
-        <input type="date" name="ReviewDate">
+        <input type="date" name="new_ReviewDate">
     </div>
 
 
 
     <div class="form-group">
         <label>Content</label>
-        <textarea id="ReviewContent" name="ReviewContent"></textarea>
+        <textarea class="form-control" id="exampleTextarea" rows="10" style="height: 258px; width:500px;" name="new_ReviewContent"></textarea>
     </div>
 
-    <input type="submit" id="submitBtn" value="Create" />
+    <input type="submit" id="submitBtn" class="btn btn-primary" value="Create" />
 
 </form>
 

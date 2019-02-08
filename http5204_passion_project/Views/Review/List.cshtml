@@ -4,9 +4,7 @@
     ViewBag.Title = "List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-//Change code
-<h2>List</h2>
+<h1>Latest Reviews</h1>
 
 <div>
     @Html.ActionLink("Write a Review", "New")
@@ -18,27 +16,28 @@
         <div class="rec">
 
             <div class="form-group">
-                <div>
-                    @if (review.Authors.HasPic == 1)
-                    {
-                        <img src="~/images/authors/@(review.Authors.AuthorId).@(review.Authors.ImageType)" />
-                    }
-                    else
-                    {
-                        <img src="~/images/authors/deadpool.jpg" />
-                    }
-                </div>
-                <span>@Page.blog.author.AuthorPenName</span>
+                @*<div>
+            @if (review.Authors.HasPic == 1)
+            {
+                <img src="~/images/authors/@(review.Authors.AuthorId).@(review.Authors.ImageType)" />
+            }
+            else
+            {
+                <img src="~/images/authors/deadpool.jpg" />
+            }
+        </div>*@
+
+                <h2>@Html.ActionLink(review.ReviewName, "Show/" + review.ReviewId)</h2>
+                <span>By: @review.Authors.AuthorAlias</span>
             </div>
             <div class="form-group">
-                <label>@Html.ActionLink(review.ReviewName, "Show/" + review.ReviewId)</label>
+               
 
-                <p>@review.ReviewContent</p>
+                
                 <span>
                     <a href="@Url.Action("Delete/"+review.ReviewId)"><i class="fa-trash-alt"></i></a>
                 </span>
             </div>
-            <div class="clearfix"></div>
         </div>
 
     }

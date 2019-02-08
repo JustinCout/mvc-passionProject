@@ -24,31 +24,36 @@ namespace http5204_passion_project.Controllers
         {
 
 
-            return View(db.Reviews.ToList());
+            return View();
         }
 
         [HttpPost]
 
-        public ActionResult Create(string ReviewTitle, string ReviewSeries, string ReviewCategory,
-            string ReviewDate, string AuthorAlias, string ReviewContent)
+        public ActionResult Create(string new_ReviewName, string new_ReviewSeries, string new_ReviewCategory,
+            string new_ReviewDate, string new_ReviewContent, string Authors_AuthorId)
         {
-            string query = "insert into Reviews (ReviewTitle, ReviewSeries, ReviewCategory, ReviewDate, AuthorAlias, ReviewContent) " +
-                           "values (@title,@series,@category,@date,@alias,@content)";
+            if (ModelState.IsValid)
+            {
+                string query = "insert into Reviews (ReviewName, ReviewSeries, ReviewCategory, ReviewContent, ReviewDate, Authors_AuthorId)" +
+                               "values (@name, @series, @category, @content, @date, @authorID)";
 
-            SqlParameter[] param = new SqlParameter[6];
-            param[0] = new SqlParameter("@title", ReviewTitle);
-            param[1] = new SqlParameter("@series", ReviewSeries);
-            param[2] = new SqlParameter("@category", ReviewCategory);
-            param[3] = new SqlParameter("@date", ReviewDate);
-            param[4] = new SqlParameter("@alias", AuthorAlias);
-            param[5] = new SqlParameter("@content", ReviewContent);
+                SqlParameter[] param = new SqlParameter[6];
+                param[0] = new SqlParameter("@name", new_ReviewName);
+                param[1] = new SqlParameter("@series", new_ReviewSeries);
+                param[2] = new SqlParameter("@category", new_ReviewCategory);
+                param[3] = new SqlParameter("@content", new_ReviewContent);
+                param[4] = new SqlParameter("@date", new_ReviewDate);
+                param[5] = new SqlParameter("@authorID", 1); //MAKE SURE TO CHANGE IT LATER! to author
 
-            db.Database.ExecuteSqlCommand(query, param);
-            //testing that the paramters do indeed pass to the method
-            //Debug>Windows>Output
-            Debug.WriteLine(query);
+                db.Database.ExecuteSqlCommand(query, param);
+                //testing that the paramters do indeed pass to the method
+                //Debug>Windows>Output
+                Debug.WriteLine(query);
 
+              
+            }
             return RedirectToAction("List");
+
         }
 
         public ActionResult Show(int id)

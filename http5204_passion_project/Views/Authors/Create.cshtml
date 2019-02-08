@@ -1,0 +1,24 @@
+﻿@model http5204_passion_project.Models.Author
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h1>New Author</h1>
+
+<form method="POST" action="/Review/Create">
+    <div class="form-group">
+        <label>Alias</label>
+        <input id="AuthorAlias" name="new_AuthorAlias" />
+    </div>
+
+    <div class="form-group">
+        <label for="uploadPic">Upload Profile Image</label>
+        <input type="file" class="form-control-file" id="InputFile" aria-describedby="fileHelp">
+        <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+    </div>
+
+    <input type="submit" id="submitBtn" class="btn btn-primary" value="Create" />
+
+</form>
+
