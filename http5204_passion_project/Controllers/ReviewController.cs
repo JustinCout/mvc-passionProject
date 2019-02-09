@@ -24,9 +24,6 @@ namespace http5204_passion_project.Controllers
 
         public ActionResult New()
         {
-            //EditReview er = new EditReview();
-
-            //er.Authors = db.Authors.ToList();
 
             return View(db.Authors.ToList());
         }
@@ -84,35 +81,34 @@ namespace http5204_passion_project.Controllers
 
         public ActionResult Edit(int id)
         {
-            //For edit we need a list of authors to pick from
-            //we also need to know what the current author is
+            EditReview er = new EditReview();
+            er.Authors = db.Authors.ToList();
+            er.Reviews = db.Reviews.Find(id);
 
-            Review re = new Review();
-            re.Authors = db.Authors.ToList();
-            //Line equivalent to "Select * from blogs where blogid = .."
-            blogeditview.blog = db.Blogs.Find(id);
-
-            return View(blogeditview);
+            return View(er);
         }
 
         [HttpPost]
-        public ActionResult Edit(int id, string BlogTitle, int BlogAuthor, string BlogBio)
+        public ActionResult Edit(int? id, string ReviewName, string ReviewSeries, string ReviewCategory,
+            string ReviewDate, string ReviewContent)
         {
             //If the ID doesn't exist or the blog doesn't exist
-            if ((id == null) || (db.Blogs.Find(id) == null))
+            if ((id == null) || (db.Reviews.Find(id) == null))
             {
                 return HttpNotFound();
-
             }
-            string query = "update blogs set BlogTitle=@title, BlogBio=@bio, author_AuthorID=@author where blogid=@id";
-            SqlParameter[] myparams = new SqlParameter[4];
-            myparams[0] = new SqlParameter("@title", BlogTitle);
-            myparams[1] = new SqlParameter("@bio", BlogBio);
-            myparams[2] = new SqlParameter("@author", BlogAuthor);
-            myparams[3] = new SqlParameter("@id", id);
+
+            string query = "update Reviews set ReviewName=@name, ReviewSeries=@series, ReviewCategory=@category, ReviewDate=@date, ReviewContent=@content where Reviewid=@id";
+            SqlParameter[] param = new SqlParameter[6];
+            param[0] = new SqlParameter("@name", ReviewName);
+            param[1] = new SqlParameter("@series", ReviewSeries);
+            param[2] = new SqlParameter("@category", ReviewCategory);
+            param[3] = new SqlParameter("@date", ReviewDate);
+            param[4] = new SqlParameter("@content", ReviewContent);
+            param[5] = new SqlParameter("@id", id);
             //forcing the blog to have an author
 
-            db.Database.ExecuteSqlCommand(query, myparams);
+            db.Database.ExecuteSqlCommand(query, param);
 
             return RedirectToAction("Show/" + id);
         }
