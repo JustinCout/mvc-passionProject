@@ -1,4 +1,4 @@
-﻿@model http5204_passion_project.Models.Review
+﻿@model IEnumerable<http5204_passion_project.Models.Author>
 
 @{
     ViewBag.Title = "New";
@@ -11,10 +11,20 @@
         <label>Title</label>
         <input id="ReviewTitle" name="new_ReviewName" />
     </div>
-  
+
     <div class="form-group">
         <label>Series (Where is it from?)</label>
         <input id="ReviewSeries" name="new_ReviewSeries" />
+    </div>
+
+    <div class="inptrow">
+        <label class="inplabel">Author</label>
+        <select id="AuthorAlias" name="Authors_AuthorId">
+            @foreach (var author in Model)
+            {
+                <option value="@author.AuthorId">aka @author.AuthorAlias</option>
+            }
+        </select>
     </div>
 
     <div class="form-group">

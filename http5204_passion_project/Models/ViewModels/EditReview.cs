@@ -13,5 +13,7 @@ namespace http5204_passion_project.Models.ViewModels
         }
 
         public virtual Review Reviews { get; set; }
+
+        public IEnumerable<Author> Authors { get; set; }
     }
 }

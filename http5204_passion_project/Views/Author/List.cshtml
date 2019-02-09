@@ -1,0 +1,16 @@
+﻿@model IEnumerable<http5204_passion_project.Models.Author>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Authors</h2>
+
+<div class="form-group">
+    @foreach (var author in Model)
+    {
+                <h2>@Html.ActionLink(author.AuthorAlias, "Show/" + author.AuthorId)</h2>
+    }
+
+    </div>
+
