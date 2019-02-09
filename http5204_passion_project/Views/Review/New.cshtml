@@ -17,8 +17,8 @@
         <input id="ReviewSeries" name="new_ReviewSeries" />
     </div>
 
-    <div class="inptrow">
-        <label class="inplabel">Author</label>
+    <div class="form-group">
+        <label>Author</label>
         <select id="AuthorAlias" name="Authors_AuthorId">
             @foreach (var author in Model)
             {
@@ -30,11 +30,12 @@
     <div class="form-group">
         <label>Category</label>
         <select name="new_ReviewCategory">
-            <option value="tv">TV Show</option>
-            <option value="movie">Movie</option>
-            <option value="game">Video Game</option>
-            <option value="comic">Comic Book</option>
-            <option value="book">Book</option>
+            <option value="TV Shows">TV Shows</option>
+            <option value="Movies">Movies</option>
+            <option value="Video Games">Video Games</option>
+            <option value="Board Games">Board Games</option>
+            <option value="Comics">Comics</option>
+            <option value="Books">Books</option>
         </select>
     </div>
 

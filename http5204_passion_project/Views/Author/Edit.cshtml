@@ -1,0 +1,39 @@
+﻿@model http5204_passion_project.Models.Author
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit @Model.AuthorAlias</h2>
+
+<form method="POST" action="/Author/Edit/@Model.AuthorId">
+    <div class="form-group">
+        <label>Alias</label>
+        <input id="AuthorAlias" value="@Model.AuthorAlias" name="AuthorAlias" />
+    </div>
+    
+    <div class="form-group">  
+        <aside>
+
+            @if (Model.HasPic == 1)
+            {
+                <img src="~/images/authors/@(Model.AuthorId).@(Model.ImageType)"/>
+            }
+            else
+            {
+                <img src="~/images/authors/deadpool.jpg"/>
+            }
+
+        </aside>
+    </div>
+
+    <div class="form-group">
+        <label for="uploadPic">Upload Profile Image</label>
+        <input type="file" class="form-control-file" value="@Model.ImageType" id="InputPic" name="ImageType" aria-describedby="fileHelp">
+        <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+    </div>
+
+    <input type="submit" id="submitBtn" class="btn btn-primary" value="Publish" />
+
+</form>

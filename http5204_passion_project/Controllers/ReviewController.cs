@@ -74,9 +74,22 @@ namespace http5204_passion_project.Controllers
             return View(db.Reviews.ToList());
         }
 
-        public ActionResult Delete()
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if ((id == null) || (db.Reviews.Find(id) == null))
+            {
+                return HttpNotFound();
+
+            }
+            //These three statements should definitely be wrapped in
+            //a stored procedure instead of me manually doing it
+            //key term here "referential integrity"
+
+
+            string query = "delete from Reviews where ReviewId=@id";
+            SqlParameter param = new SqlParameter("@id", id);
+            db.Database.ExecuteSqlCommand(query, param);
+            return RedirectToAction("List");
         }
 
         public ActionResult Edit(int id)

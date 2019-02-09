@@ -3,10 +3,25 @@
 @{
     ViewBag.Title = "Show";
 }
+<div class="form-group">
+    @Html.ActionLink("Edit", "Edit/" + Model.AuthorId) 
+    @Html.ActionLink("Delete", "Delete/" + Model.AuthorId)
+</div>
 
 <h2>@Model.AuthorAlias</h2>
 
-<div class="form-group">
-    
+<div class="form-group">  
+    <aside>
+
+        @if (Model.HasPic == 1)
+        {
+            <img src="~/images/authors/@(Model.AuthorId).@(Model.ImageType)"/>
+        }
+        else
+        {
+            <img src="~/images/authors/deadpool.jpg"/>
+        }
+
+    </aside>
 </div>
 

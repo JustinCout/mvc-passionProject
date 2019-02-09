@@ -9,6 +9,7 @@
 
 <div class="form-group">
     @Html.ActionLink("Edit", "Edit/" + Model.ReviewId)
+    @Html.ActionLink("Delete", "Delete/" + Model.ReviewId)
 </div>
 <div>
     <div class="form-group">
@@ -17,19 +18,19 @@
         </article>
     </div>
     <div class="form-group">
+        <span>Written By: @Html.ActionLink(Model.Authors.AuthorAlias, "Details/" + Model.Authors.AuthorId, "Author")</span>
         <aside>
 
             @if (Model.Authors.HasPic == 1)
             {
-                <img src="~/images/authors/@(Model.Authors.AuthorId).@(Model.Authors.ImageType)" />
+                <img src="~/images/authors/@(Model.Authors.AuthorId).@(Model.Authors.ImageType)"/>
             }
             else
             {
-                <img src="~/images/authors/deadpool.jpg" />
+                <img src="~/images/authors/deadpool.jpg"/>
             }
 
         </aside>
-        <span>Written By: @Html.ActionLink(Model.Authors.AuthorAlias, "Details/" + Model.Authors.AuthorId, "Author")</span>
     </div>
     <div class="clearfix"></div>
 </div>
