@@ -6,17 +6,22 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link type="text/css" href="~/Content/justin.css" rel="stylesheet" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="~/Review/List">Geekology</a>
+    <nav id="mainnav" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="nav-title" href="~/Review/List">Geekology</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
-              
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Home/Index">Home</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="~/Review/List">Reviews</a>
                 </li>

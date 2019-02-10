@@ -1,0 +1,43 @@
+﻿body {
+    font-family: 'Open Sans', sans-serif;  
+}
+/*NAV*/
+#mainnav {
+    margin-bottom: 50px;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-link {
+    margin-left:30px;
+}
+
+.nav-title {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.nav-title:hover {
+    color:whitesmoke;
+    text-decoration: none;
+}
+
+/*REVIEW LIST*/
+.rev-holder { 
+    border-style: initial;
+    background-color: rgba(76, 77, 79, 0.4);
+    margin-bottom: 50px;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+/*AUTHOR LIST*/
+.auth-holder {
+    border-style: initial;
+    background-color: rgba(76, 77, 79, 0.4);
+    margin-bottom: 25px;
+    margin-top: 10px;
+    padding: 10px;
+}
+

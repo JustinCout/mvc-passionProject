@@ -9,7 +9,7 @@
 
 <div class="form-group">
     @Html.ActionLink("Edit", "Edit/" + Model.ReviewId)
-    @Html.ActionLink("Delete", "Delete/" + Model.ReviewId)
+    @Html.ActionLink("Delete", "Delete/" + Model.ReviewId, @OnClick = "return confirm('Are you sure you to delete this Record?');" )
 </div>
 <div>
     <div class="form-group">

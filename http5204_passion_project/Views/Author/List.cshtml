@@ -4,15 +4,17 @@
     ViewBag.Title = "List";
 }
 
-<h2>Authors</h2>
-<div>
-    @Html.ActionLink("New Author", "Create")
-</div>
-<div class="form-group">
-    @foreach (var author in Model)
-    {
-                <h2>@Html.ActionLink(author.AuthorAlias, "Show/" + author.AuthorId)</h2>
-    }
+<h1>Authors</h1>
+<aside class="page-link">@Html.ActionLink("New Author", "Create")</aside>
 
-    </div>
+
+@foreach (var author in Model)
+
+{
+<div class="auth-holder">
+    <h2>@Html.ActionLink(author.AuthorAlias, "Show/" + author.AuthorId)</h2>
+</div>
+        }
+
+    
 

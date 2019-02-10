@@ -4,35 +4,20 @@
     ViewBag.Title = "List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h1>Latest Reviews</h1>
+<h1>Latest Reviews</h1><aside class="page-link">@Html.ActionLink("Write a Review", "New")</aside> 
 
 <div>
-    @Html.ActionLink("Write a Review", "New")
-</div>
-<div class="form-group">
     @foreach (var review in Model)
     {
 
-     
 
-            <div class="form-group">
-                @*<div>
-            @if (review.Authors.HasPic == 1)
-            {
-                <img src="~/images/authors/@(review.Authors.AuthorId).@(review.Authors.ImageType)" />
-            }
-            else
-            {
-                <img src="~/images/authors/deadpool.jpg" />
-            }
-        </div>*@
-
-                <h3>@Html.ActionLink(review.ReviewName, "Show/" + review.ReviewId)</h3>
-                <p>Origin: @review.ReviewSeries</p>
-                <p>Category: @review.ReviewCategory</p>
-                <span>By: @Html.ActionLink(review.Authors.AuthorAlias, "Show/" + review.Authors)</span>
-            </div>      
-
+        <div class="rev-holder">
+            <h3>@Html.ActionLink(review.ReviewName, "Show/" + review.ReviewId)</h3>
+            <p><b>Origin: </b> @review.ReviewSeries</p>
+            <p><b>Category: </b> @review.ReviewCategory</p>
+            <span><b>By: </b> @Html.ActionLink(review.Authors.AuthorAlias, "Show/" + review.Authors.AuthorId, "Author")</span>
+        </div>
     }
+
 </div>
 

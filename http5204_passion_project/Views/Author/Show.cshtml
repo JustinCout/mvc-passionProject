@@ -1,4 +1,5 @@
-﻿@model http5204_passion_project.Models.Author
+﻿@using http5204_passion_project.Models
+@model http5204_passion_project.Models.Author
 
 @{
     ViewBag.Title = "Show";
@@ -23,5 +24,13 @@
         }
 
     </aside>
+</div>
+
+<div>
+    <h3>Reviews by @Model.AuthorAlias</h3>
+    @foreach (var review in Model.Reviews)
+    {
+        @Html.ActionLink(review.ReviewName, "Show/" + review.ReviewId, "Review")
+    }
 </div>
 
