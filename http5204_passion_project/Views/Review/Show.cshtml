@@ -9,7 +9,7 @@
 
 <div class="form-group">
     @Html.ActionLink("Edit", "Edit/" + Model.ReviewId)
-    @Html.ActionLink("Delete", "Delete/" + Model.ReviewId, @OnClick = "return confirm('Are you sure you to delete this Record?');" )
+    @Html.ActionLink("Delete", "Delete/" + Model.ReviewId)
 </div>
 <div>
     <div class="form-group">
@@ -23,7 +23,7 @@
 
             @if (Model.Authors.HasPic == 1)
             {
-                <img src="~/images/authors/@(Model.Authors.AuthorId).@(Model.Authors.ImageType)"/>
+                <img class ="profileimg" src="~/images/authors/@(Model.Authors.AuthorId).@(Model.Authors.ImageType)"/>
             }
             else
             {

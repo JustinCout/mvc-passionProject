@@ -17,10 +17,7 @@ namespace http5204_passion_project.Controllers
     {
         private ReviewDbContext db = new ReviewDbContext();
        
-        public ActionResult Index()
-        {
-            return RedirectToAction("List");
-        }
+  
 
         public ActionResult New()
         {
@@ -60,12 +57,7 @@ namespace http5204_passion_project.Controllers
         public ActionResult Show(int id)
         {
             string query = "select * from reviews where ReviewId =@id";
-
-            //should return type of "Page"
-
             Debug.WriteLine(query);
-            //This line means run the query, take the first one
-
             return View(db.Reviews.SqlQuery(query, new SqlParameter("@id", id)).FirstOrDefault());
         }
 
@@ -81,11 +73,7 @@ namespace http5204_passion_project.Controllers
                 return HttpNotFound();
 
             }
-            //These three statements should definitely be wrapped in
-            //a stored procedure instead of me manually doing it
-            //key term here "referential integrity"
-
-
+       
             string query = "delete from Reviews where ReviewId=@id";
             SqlParameter param = new SqlParameter("@id", id);
             db.Database.ExecuteSqlCommand(query, param);
@@ -105,8 +93,7 @@ namespace http5204_passion_project.Controllers
         public ActionResult Edit(int? id, string ReviewName, string ReviewSeries, string ReviewCategory,
             string ReviewDate, string ReviewContent)
         {
-            //If the ID doesn't exist or the blog doesn't exist
-            if ((id == null) || (db.Reviews.Find(id) == null))
+           if ((id == null) || (db.Reviews.Find(id) == null))
             {
                 return HttpNotFound();
             }
@@ -119,7 +106,6 @@ namespace http5204_passion_project.Controllers
             param[3] = new SqlParameter("@date", ReviewDate);
             param[4] = new SqlParameter("@content", ReviewContent);
             param[5] = new SqlParameter("@id", id);
-            //forcing the blog to have an author
 
             db.Database.ExecuteSqlCommand(query, param);
 
