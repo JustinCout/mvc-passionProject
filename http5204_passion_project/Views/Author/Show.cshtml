@@ -16,11 +16,11 @@
 
         @if (Model.HasPic == 1)
         {
-            <img class ="profileimg" src="~/images/authors/@(Model.AuthorId).@(Model.ImageType)"/>
+            <img src="~/images/authors/@(Model.AuthorId).@(Model.ImageType)"/>
         }
         else
         {
-            <img class ="profileimg" src="~/images/authors/deadpool.jpg"/>
+            <img src="~/images/authors/deadpool.jpg"/>
         }
 
     </aside>

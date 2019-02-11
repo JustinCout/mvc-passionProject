@@ -4,7 +4,9 @@
     ViewBag.Title = "List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h1>Latest Reviews</h1><aside class="page-link">@Html.ActionLink("Write a Review", "New")</aside> 
+<img id="rick" src="~/images/picklerick.png" />
+<h1>Latest Reviews</h1><a href="http://localhost:52372/Review/New" class="btn btn-primary">Write a review</a> 
+
 
 <div>
     @foreach (var review in Model)

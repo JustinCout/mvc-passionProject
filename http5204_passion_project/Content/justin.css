@@ -43,4 +43,42 @@
 
 /*Images*/
 
+#mario {
+    width:20%;
+    float: right;
+    margin-top: 0;
+}
+#pipe {
+    width:12%;
+    float: right;
+    margin-top:43px;
 
+}
+
+#babymario {
+    width: 10%;
+    float: right;
+    margin-right: 70%;
+}
+#rick {
+    float: right;
+    width: 12%;
+    margin-right: 5%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+    #rick:hover {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+#sword {
+    float: right;
+    width: 15%;
+    margin-right: 50px;
+}
+#dk {
+    float: right;
+    width: 18%;
+    margin-top: 100px;
+    margin-right: 50%;
+}
