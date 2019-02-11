@@ -15,13 +15,13 @@ namespace http5204_passion_project.Controllers
 {
     public class HomeController : Controller
     {
-        private ReviewDbContext db = new ReviewDbContext();
+        
 
         public ActionResult Index()
         {
         
 
-            return View(db.Reviews);
+            return View();
            
         }
 
