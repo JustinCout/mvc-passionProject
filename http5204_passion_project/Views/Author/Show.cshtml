@@ -5,8 +5,9 @@
     ViewBag.Title = "Show";
 }
 <div class="form-group">
-    @Html.ActionLink("Edit", "Edit/" + Model.AuthorId) 
-    @Html.ActionLink("Delete", "Delete/" + Model.AuthorId)
+    <div class="btn btn-info"> @Html.ActionLink("Edit", "Edit/" + Model.AuthorId) </div>
+    <div class="btn btn-danger"> @Html.ActionLink("Delete", "Delete/" + Model.AuthorId) </div>
+    
 </div>
 
 <h2>@Model.AuthorAlias</h2>

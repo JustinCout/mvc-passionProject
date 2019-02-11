@@ -23,7 +23,7 @@ namespace http5204_passion_project
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-superhero.css",
+                      "~/Content/bootstrap-dark.css",
                       "~/Content/site.css"));
         }
     }

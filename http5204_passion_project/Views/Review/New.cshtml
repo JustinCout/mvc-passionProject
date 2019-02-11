@@ -7,20 +7,20 @@
 
 <h2>New Review</h2>
 
-<form method="POST" action="/Review/Create">
+<form class="form-style" method="POST" action="/Review/Create">
     <div class="form-group">
         <label for="ReviewTitle">Title</label><br>
-        <input id="ReviewTitle" name="new_ReviewName" placeholder="Enter title" />
+        <input id="ReviewTitle" name="new_ReviewName" class="form-control" placeholder="Enter title" />
     </div>
 
     <div class="form-group">
         <label for="ReviewSeries">Series</label><br>
-        <input id="ReviewSeries" name="new_ReviewSeries" placeholder="Where is it from?"/>
+        <input id="ReviewSeries" name="new_ReviewSeries" class="form-control" placeholder="Where is it from?"/>
     </div>
 
     <div class="form-group">
         <label for="AuthorAlias">Author</label><br>
-        <select id="AuthorAlias" name="Authors_AuthorId">
+        <select id="AuthorAlias" class="custom-select" name="Authors_AuthorId">
             @foreach (var author in Model)
             {
                 <option value="@author.AuthorId">@author.AuthorAlias</option>
@@ -30,7 +30,7 @@
 
     <div class="form-group">
         <label for="ReviewCategory">Category</label><br>
-        <select id="ReviewCategory" name="new_ReviewCategory">
+        <select id="ReviewCategory" class="custom-select" name="new_ReviewCategory">
             <option value="TV Shows">TV Shows</option>
             <option value="Movies">Movies</option>
             <option value="Video Games">Video Games</option>
@@ -42,7 +42,7 @@
 
     <div class="form-group">
         <label for="datetime">Date</label><br>
-        <input  id="datetime" type="date" name="new_ReviewDate" placeholder="Select date">
+        <input  id="datetime" type="date" class="form-control" name="new_ReviewDate" placeholder="Select date">
     </div>
 
 

@@ -1,5 +1,6 @@
 ﻿body {
-    font-family: 'Open Sans', sans-serif;  
+    font-family: 'Open Sans', sans-serif;
+    color: white;
 }
 /*NAV*/
 #mainnav {
@@ -32,6 +33,17 @@
     padding: 20px;
 }
 
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+a:hover {
+    color:lightgreen;
+}
+
 /*AUTHOR LIST*/
 .auth-holder {
     border-style: initial;
@@ -51,7 +63,7 @@
 #pipe {
     width:12%;
     float: right;
-    margin-top:43px;
+    margin-top:49px;
 
 }
 
@@ -81,4 +93,8 @@
     width: 18%;
     margin-top: 100px;
     margin-right: 50%;
+}
+/*FORMS*/
+.form-style {
+
 }
