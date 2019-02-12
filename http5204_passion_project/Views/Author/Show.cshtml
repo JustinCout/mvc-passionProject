@@ -10,7 +10,7 @@
     
 </div>
 
-<h2>@Model.AuthorAlias</h2>
+
 
 <div class="form-group">  
     <aside>
@@ -21,14 +21,14 @@
         }
         else
         {
-            <img src="~/images/authors/deadpool.jpg"/>
+            <img src="~/images/authors/stormtrooper.jpg"/>
         }
 
     </aside>
 </div>
-
+<h2>@Model.AuthorAlias</h2>
 <div>
-    <h3>Reviews by @Model.AuthorAlias</h3>
+    <h3>Reviews:</h3>
     @foreach (var review in Model.Reviews)
     {
         @Html.ActionLink(review.ReviewName, "Show/" + review.ReviewId, "Review")<br>

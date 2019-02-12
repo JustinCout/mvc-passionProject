@@ -95,23 +95,24 @@ namespace http5204_passion_project.Controllers
             return RedirectToAction("Show/" + id);
         }
 
+        //Was not able to get uploading an image to work
+
         //[HttpPost]
         //[ValidateAntiForgeryToken]
-        //public ActionResult Edit([Bind(Include = "AuthorID,AuthorAlias")] Author author, HttpPostedFileBase authorimg)
+        //public ActionResult Edit([Bind(Include = "AuthorId, AuthorAlias")] Author author, HttpPostedFileBase authorimg)
         //{
         //    author.HasPic = 0;
 
 
         //    if (authorimg.ContentLength > 0)
         //    {
-        //        //file extensioncheck taken from https://www.c-sharpcorner.com/article/file-upload-extension-validation-in-asp-net-mvc-and-javascript/
-        //        var valtypes = new[] { "jpeg", "jpg", "png", "gif" };
+                
+        //        var validImg = new[] { "jpeg", "jpg", "png", "gif" };
         //        var extension = Path.GetExtension(authorimg.FileName).Substring(1);
 
-        //        if (valtypes.Contains(extension))
+        //        if (validImg.Contains(extension))
         //        {
 
-        //            //generic .img extension, web translates easily.
         //            string fn = author.AuthorId + "." + extension;
 
         //            //get a direct file path to imgs/authors/

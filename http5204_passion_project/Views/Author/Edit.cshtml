@@ -22,7 +22,7 @@
             }
             else
             {
-                <img src="~/images/authors/deadpool.jpg"/>
+                <img src="~/images/authors/stormtrooper.jpg"/>
             }
 
         </aside>
@@ -30,8 +30,8 @@
 
     <div class="form-group">
         <label for="uploadPic">Upload Profile Image</label>
-        <input type="file" class="form-control-file" value="@Model.ImageType" id="InputPic" name="ImageType" aria-describedby="fileHelp">
-        <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+        <input type="file" class="form-control-file" id="authorimg" value="@Model.AuthorAlias" name="ImageType">
+      
     </div>
 
     <input type="submit" id="submitBtn" class="btn btn-primary" value="Publish" />

@@ -26,7 +26,7 @@ namespace http5204_passion_project.Controllers
         }
 
         [HttpPost]
-
+        //Referencing Christine's 'blogs' example
         public ActionResult Create(string new_ReviewName, string new_ReviewSeries, string new_ReviewCategory,
             string new_ReviewDate, string new_ReviewContent, int? Authors_AuthorId)
         {
