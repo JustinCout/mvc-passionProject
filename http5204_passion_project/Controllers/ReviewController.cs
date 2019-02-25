@@ -30,8 +30,7 @@ namespace http5204_passion_project.Controllers
         public ActionResult Create(string new_ReviewName, string new_ReviewSeries, string new_ReviewCategory,
             string new_ReviewDate, string new_ReviewContent, int? Authors_AuthorId)
         {
-            if (ModelState.IsValid)
-            {
+            
                 string query = "insert into Reviews (ReviewName, ReviewSeries, ReviewCategory, ReviewContent, ReviewDate, Authors_AuthorId)" +
                                "values (@name, @series, @category, @content, @date, @authorID)";
 
@@ -49,7 +48,7 @@ namespace http5204_passion_project.Controllers
                 Debug.WriteLine(query);
 
               
-            }
+            
             return RedirectToAction("List");
 
         }
@@ -82,11 +81,11 @@ namespace http5204_passion_project.Controllers
 
         public ActionResult Edit(int id)
         {
-            EditReview er = new EditReview();
-            er.Authors = db.Authors.ToList();
-            er.Reviews = db.Reviews.Find(id);
+            EditReview edit = new EditReview();
+            edit.Authors = db.Authors.ToList();
+            edit.Reviews = db.Reviews.Find(id);
 
-            return View(er);
+            return View(edit);
         }
 
         [HttpPost]

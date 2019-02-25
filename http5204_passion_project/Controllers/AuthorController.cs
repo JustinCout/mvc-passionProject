@@ -34,8 +34,7 @@ namespace http5204_passion_project.Controllers
 
         public ActionResult Create(string new_AuthorAlias)
         {
-            if (ModelState.IsValid)
-            {
+          
                 string query = "insert into Authors (AuthorAlias, HasPic, ImageType)" +
                                "values (@author, 0, 0)";
 
@@ -49,7 +48,7 @@ namespace http5204_passion_project.Controllers
                 Debug.WriteLine(query);
 
 
-            }
+            
             return RedirectToAction("List");
 
         }

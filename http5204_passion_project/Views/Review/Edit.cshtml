@@ -19,13 +19,22 @@
     </div>
 
     <div class="form-group">
+        
         <label>Category</label>
-        <select value="@Model.Reviews.ReviewCategory" class="custom-select" name="ReviewCategory">
-            <option value="tv">TV Show</option>
-            <option value="movie">Movie</option>
-            <option value="game">Video Game</option>
-            <option value="comic">Comic Book</option>
-            <option value="book">Book</option>
+        <select value="@Model.Reviews.ReviewCategory" class="custom-select" name="ReviewCategory" id="selectCategory">
+            @*@foreach(var category in @Model.Reviews.ReviewCategory)
+            {
+                if (category.Equals(value))
+                {
+                    category.Remove();
+                }
+            }*@
+            <option value="@Model.Reviews.ReviewCategory">@Model.Reviews.ReviewCategory</option>
+            <option value="TV Shows">TV Shows</option>
+            <option value="Movies">Movies</option>
+            <option value="Video Games">Video Games</option>
+            <option value="Comic Books">Comic Books</option>
+            <option value="Books">Books</option>
         </select>
     </div>
 
